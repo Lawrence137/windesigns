@@ -39,7 +39,7 @@ export const SignUp = () => {
     }
 
   return ( 
-   <div className="">
+   <div className="min-h-screen bg-gradient-to-b from-red-300 to-orange-300">
 <form onSubmit={handleSubmit}>
   <div className="container mx-auto w-64 ">
     <h2 className="text-2xl">Sign Up Here</h2>
@@ -76,7 +76,7 @@ export const SignUp = () => {
     <label htmlFor="exampleInputPassword1" className="block mt-4 font-semibold"></label>
     <input type="password" placeholder="Password" className="border border-gray-300 rounded px-3 py-2 w-full" value={password} onChange={e => setPassword(e.target.value)} />
 
-    <button type="submit" className="mt-4 bg-green-500 text-white font-semibold py-2 px-4 rounded">Submit</button>
+    <button type="submit" className="mt-4 bg-blue-800 text-white font-semibold py-2 px-4 rounded">Submit</button>
   </div>
 </form>
 </div>

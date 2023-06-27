@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export const Home = ({ setIsAuthenticated }) => {
@@ -7,55 +7,34 @@ export const Home = ({ setIsAuthenticated }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/search");
-    console.log("go to home now");
-    setIsAuthenticated(true);
+    navigate("/signup");
+    setIsAuthenticated(false);
     setShowBackground(false);
   };
 
   return (
     <div className="">
       {showBackground && (
-       <div className="bg-cover bg-center h-screen" style={{ backgroundImage: `url(${require('./assets/novavest1.jpg')})` }}>
-          <div className="bg-opacity-80">
-            <div className="flex justify-around mt-5">
-              <div className="mt-4 p-5 card col-5">
-                <p className="text-3xl text-base font-bold leading-9 bg-white" style={{ lineHeight: "3rem" }}>
-                  Welcome to Novavest, your one stop investment platform. Invest from as low as $1.
-                </p>
-              </div>
-              <div className="card col-4 mt-4 justify-center bg-green-700">
-                <h4 className="ms-5 m-3 mt-4 font-bold">please sign In to continue</h4>
-                <form className="col-8 ms-5 " onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <label htmlFor="email" className="mb-2 font-bold">Email</label>
-                    <br />
-                    <input type="text" className="form-control" id="email" placeholder="Enter Your Email" required />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="password" className="mb-2 font-bold">Password</label>
-                    <br />
-                    <input type="password" className="form-control" id="password" placeholder="Enter password" required />
-                  </div>
-                  <button type="submit" className="btn btn-outline-warning me-4 mb-4">SIGN IN</button>
-                  <p className="font-bold">
-                    Don't have an account?
-                    <br />
-                    <Link to="/signup">
-                      <button className="btn btn-outline-warning ms-3">Sign up</button>
-                    </Link>
-                  </p>
-                </form>
-              </div>
-            </div>
+        <div className="bg-cover bg-center h-screen" style={{ backgroundImage: `url(${require('./assets/backgrd.jpg')})` }}>
+          <div className="landing-page flex flex-col items-center justify-center h-screen" style={{ backgroundColor: 'rgba(2, 0, 2, 0.8)' }}>
+            <h4 className="text-4xl md:text-8xl font-signature bg-gradient-to-r from-red-700 via-blue-700 to-yellow-700 py-2 inline-block" style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              NOVAVEST
+            </h4>
+  
+            <form className="mt-4 flex flex-col items-center" onSubmit={handleSubmit}>
+              <button type="submit" className="py-4 px-10 text-xl rounded-full mt-4 text-black font-bold bg-gradient-to-r from-red-700 via-blue-700 to-yellow-700">
+                Get Started
+              </button>
+            </form>
           </div>
         </div>
       )}
+  
       {!showBackground && (
         <div className="flex justify-around mt-5">
           <div className="mt-4 p-5 card col-5">
             <p className="text-3xl text-base font-bold leading-9" style={{ lineHeight: "3rem" }}>
-
+              Welcome to Novavest, your one stop investment platform. Invest from as low as $1.
             </p>
           </div>
           <div className="card col-4 mt-4 justify-center">
@@ -65,4 +44,4 @@ export const Home = ({ setIsAuthenticated }) => {
       )}
     </div>
   );
-};
+}  

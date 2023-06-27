@@ -19,11 +19,12 @@ export const App = () => {
     history.push('/');
   };
   return (
-    <Router> {/* Wrap your Routes component with Router */}
-      <div className="min-h-screen bg-gradient-to-b from-green-900 via-green-700 to-gray-300">
+    <Router>
+      <div className="min-h-screen ">
       <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout}  />
         <Routes history={history}>
           <Route path="/" element={<Home setIsAuthenticated={setIsAuthenticated} />} />
+          <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/signup" element={<SignUp setIsAuthenticated={setIsAuthenticated} />} />
           {isAuthenticated && (
             <>
