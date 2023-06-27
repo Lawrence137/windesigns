@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import {BsArrowRightCircleFill} from "react-icons/bs"
 
 export const Home = ({ setIsAuthenticated }) => {
   const [showBackground, setShowBackground] = useState(true);
@@ -18,13 +19,19 @@ export const Home = ({ setIsAuthenticated }) => {
         <div className="bg-cover bg-center h-screen" style={{ backgroundImage: `url(${require('./assets/backgrd.jpg')})` }}>
           <div className="landing-page flex flex-col items-center justify-center h-screen" style={{ backgroundColor: 'rgba(2, 0, 2, 0.8)' }}>
             <h4 className="text-4xl md:text-8xl font-signature bg-gradient-to-r from-red-700 via-blue-700 to-yellow-700 py-2 inline-block" style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              NOVAVEST
+              NOVAVE$T
             </h4>
   
             <form className="mt-4 flex flex-col items-center" onSubmit={handleSubmit}>
-              <button type="submit" className="py-4 px-10 text-xl rounded-full mt-4 text-black font-bold bg-gradient-to-r from-red-700 via-blue-700 to-yellow-700">
-                Get Started
-              </button>
+            <button type="submit" className="flex py-4 px-10 text-xl rounded-full mt-4 text-black font-bold bg-gradient-to-r from-red-700 via-blue-700 to-yellow-700 w-full">
+  Get Started
+  <span className='flex-shrink-0'>
+    <BsArrowRightCircleFill size={25} className='ml-2'/>
+  </span>
+</button>
+
+
+
             </form>
           </div>
         </div>
