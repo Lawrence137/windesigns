@@ -58,7 +58,7 @@ export const Navbar = ({ isAuthenticated, handleLogout }) => {
         <div className='fixed top-0 left-0 w-full h-screen bg-gradient-to-b from-red-700 to-yellow-700 text-white'>
           <div className='h-full overflow-y-scroll'>
             <ul className='flex flex-col justify-center items-center py-6'>
-              <li onClick={handleLinkClick} className='px-4 cursor-pointer capitalize py-6 text-4xl'>
+              <li onClick={handleLinkClick} className='px-4 cursor-pointer capitalize py-6 text-2xl'>
                 <Link to="/">Home</Link>
               </li>
               {isAuthenticated && (
@@ -76,10 +76,10 @@ export const Navbar = ({ isAuthenticated, handleLogout }) => {
               )}
               {!isAuthenticated && (
                 <>
-                  <li onClick={handleLinkClick} className='px-4 cursor-pointer capitalize py-6 text-4xl'>
+                  <li onClick={handleLinkClick} className='px-4 cursor-pointer capitalize py-6 text-2xl'>
                     <Link to="/login">Login</Link>
                   </li>
-                  <li onClick={handleLinkClick} className='px-4 cursor-pointer capitalize py-6 text-4xl'>
+                  <li onClick={handleLinkClick} className='px-4 cursor-pointer capitalize py-6 text-2xl'>
                     <Link to="/signup">Sign Up</Link>
                   </li>
                 </>
