@@ -18,7 +18,7 @@ export const Home = ({ setIsAuthenticated }) => {
       {showBackground && (
         <div className="bg-cover bg-center h-screen" style={{ backgroundImage: `url(${require('./assets/backgrd.jpg')})` }}>
           <div className="landing-page flex flex-col items-center justify-center h-screen" style={{ backgroundColor: 'rgba(2, 0, 2, 0.8)' }}>
-            <h4 className="text-4xl md:text-8xl font-signature bg-gradient-to-r from-red-700 via-blue-700 to-yellow-700 py-2 inline-block" style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <h4 className="text-6xl md:text-8xl font-signature bg-gradient-to-r from-red-700 via-blue-700 to-yellow-700 py-2 inline-block" style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               NOVAVE$T
             </h4>
   
