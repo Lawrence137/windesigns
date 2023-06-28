@@ -12,7 +12,7 @@ export const Login = ({ setIsAuthenticated }) => {
 
 
     return (
-      <div className="h-screen bg-cover bg-gradient-to-b from-red-300  to-orange-300">
+      <div className="h-screen bg-cover bg-gradient-to-b from-red-700  to-yellow-700">
         <div className="bg-opacity-80">
           <div className="flex justify-around mt-5">
             <div className="card col-4 mt-4 justify-center">
