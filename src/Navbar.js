@@ -12,12 +12,12 @@ export const Navbar = ({ isAuthenticated, handleLogout }) => {
 
   return (
     <nav className="sticky top-0 bg-black text-white flex justify-between px-4 py-2">
-      <div className="flex items-center">
+      <div className="flex items-center ">
       <Link to="/">
         <img
           src={novavest}
           alt="logo"
-          className="w-24 h-20 object-contain"
+          className="w-24 h-20 object-contain scale-125"
         />
         </Link>
         <div className="ms-5 hidden md:flex space-x-4 font-bold">
