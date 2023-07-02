@@ -13,11 +13,13 @@ export const Navbar = ({ isAuthenticated, handleLogout }) => {
   return (
     <nav className="sticky top-0 bg-black text-white flex justify-between px-4 py-2">
       <div className="flex items-center">
+      <Link to="/">
         <img
           src={novavest}
           alt="logo"
           className="w-24 h-20 object-contain"
         />
+        </Link>
         <div className="ms-5 hidden md:flex space-x-4 font-bold">
           <Link to="/" exact className="nav-link">
             Home
@@ -55,7 +57,7 @@ export const Navbar = ({ isAuthenticated, handleLogout }) => {
       </div>
 
       {nav && (
-        <div className='fixed top-0 left-0 w-full h-screen bg-gradient-to-b from-red-700 to-yellow-700 text-white'>
+        <div className='fixed top-0 left-0 w-full h-screen bg-white text-black'>
           <div className='h-full overflow-y-scroll'>
             <ul className='flex flex-col justify-center items-center py-6'>
               <li onClick={handleLinkClick} className='px-4 cursor-pointer capitalize py-6 text-2xl'>

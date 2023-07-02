@@ -39,11 +39,11 @@ export const Home = ({ setIsAuthenticated }) => {
   
       {!showBackground && (
         <div className="flex justify-around mt-5">
-          <div className="mt-4 p-5 card col-5">
+          {/* <div className="mt-4 p-5 card col-5">
             <p className="text-3xl text-base font-bold leading-9" style={{ lineHeight: "3rem" }}>
               Welcome to Novavest, your one stop investment platform. Invest from as low as $1.
             </p>
-          </div>
+          </div> */}
           <div className="card col-4 mt-4 justify-center">
             <h4 className="ms-5 m-3 mt-4 font-bold">You are signed in!</h4>
           </div>
