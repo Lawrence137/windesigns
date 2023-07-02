@@ -11,7 +11,7 @@ export const Navbar = ({ isAuthenticated, handleLogout }) => {
   };
 
   return (
-    <nav className="sticky top-0 bg-black text-white flex justify-between px-4 py-2">
+    <nav className="sticky fixed top-0 left-0 right-0 bg-black text-white flex justify-between px-4 py-2">
       <div className="flex items-center ">
       <Link to="/">
         <img
