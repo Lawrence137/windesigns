@@ -49,7 +49,7 @@ export const SignUp = () => {
         if (res.ok) {
           // Redirect the user to the appropriate page based on their user type
           if (userType === "investor") {
-            navigate("/investor");
+            navigate("/investment");
           } else if (userType === "company") {
             navigate("/company");
           }
@@ -115,9 +115,19 @@ export const SignUp = () => {
       ></Formik>
       <form onSubmit={handleSubmit}>
         <div className="container mx-auto w-64 ">
-          <h2 className="text-2xl ml-12 font-bold"> Sign Up Here</h2>
+          {/* <h2 className="text-2xl ml-12 font-bold"> SIGN UP HERE</h2> */}
           <div className="flex flex-col mt-5">
-  <button
+
+          <button
+    type="button"
+    className={`bg-blue-800 text-white font-semibold py-2 px-4  mt-7 rounded-t-lg rounded-b-lg ${
+      userType === "company" ? "bg-blue-600 " : ""
+    }`}
+    onClick={() => setUserType("company")}
+  >
+    SIGN UP YOUR COMPANY
+  </button>
+  {/* <button
     type="button"
     className={`bg-blue-800 text-white font-semibold py-2 transition delay-100 ease-in-out duration-300 hover:contrast-200 hover:drop-shadow-2xl px-4  rounded-t-lg rounded-b-lg ${
       userType === "investor" ? "bg-blue-600" : ""
@@ -125,37 +135,32 @@ export const SignUp = () => {
     onClick={() => setUserType("investor")}
   >
     Sign Up as an Investor
-  </button>
-  <button
-    type="button"
-    className={`bg-blue-800 text-white font-semibold py-2 px-4 transition delay-100 ease-in-out duration-300 hover:contrast-200 hover:drop-shadow-2xl mt-7 rounded-t-lg rounded-b-lg ${
-      userType === "company" ? "bg-blue-600 " : ""
-    }`}
-    onClick={() => setUserType("company")}
-  >
-    Sign Up Your Company
-  </button>
+  </button> */}
+
 </div>
 
           {userType && (
             <>
               {userType === "company" && (
                 <>
-                  <label htmlFor="companyName" className="block mt-4 font-semibold">
-                    Company Name
+
+
+<label htmlFor="companyName" className="block mt-4 font-semibold">
+                    Loan Amount
                   </label>
                   <input
                     id="companyName"
                     name="companyName"
                     type="text"
-                    placeholder="Company Name"
+                    placeholder="Loan Amount"
                     className="border border-gray-300 rounded px-3 py-2 w-full"
                     value={companyName}
                     onChange={(e) => setCompanyName(e.target.value)}
                   />
+
   
                   <label htmlFor="certOfIncorporation" className="block mt-4 font-semibold">
-                    Certificate of Incorporation
+                    ID/Passport
                   </label>
                   <input
                     id="certOfIncorporation"
@@ -164,9 +169,22 @@ export const SignUp = () => {
                     className="border border-gray-300 rounded px-3 py-2 w-full"
                     onChange={(e) => setCertOfIncorporation(e.target.files[0])}
                   />
+
+<label htmlFor="companyName" className="block mt-4 font-semibold">
+                    KRA PIN
+                  </label>
+                  <input
+                    id="companyName"
+                    name="companyName"
+                    type="text"
+                    placeholder="KRA PIN"
+                    className="border border-gray-300 rounded px-3 py-2 w-full"
+                    value={companyName}
+                    onChange={(e) => setCompanyName(e.target.value)}
+                  />
   
                   <label htmlFor="idOfDirectors" className="block mt-4 font-semibold">
-                    ID of Directors
+                    Proof of Residence
                   </label>
                   <input
                     id="idOfDirectors"
@@ -177,7 +195,7 @@ export const SignUp = () => {
                   />
   
                   <label htmlFor="companyKRA" className="block mt-4 font-semibold">
-                    Company KRA PIN
+                  6 Months Bank/Mpesa Statements
                   </label>
                   <input
                     id="companyKRA"
@@ -187,7 +205,7 @@ export const SignUp = () => {
                     onChange={(e) => setCompanyKRA(e.target.files[0])}
                   />
   
-                  <label htmlFor="directorsKRA" className="block mt-4 font-semibold">
+                  {/* <label htmlFor="directorsKRA" className="block mt-4 font-semibold">
                     Directors KRA PIN
                   </label>
                   <input
@@ -207,10 +225,10 @@ export const SignUp = () => {
                     type="file"
                     className="border border-gray-300 rounded px-3 py-2 w-full"
                     onChange={(e) => setCr12(e.target.files[0])}
-                  />
+                  /> */}
                 </>
               )}
-              {userType === "investor" && (
+              {/* {userType === "investor" && (
                 <>
                   <label htmlFor="firstName" className="block mt-4 font-semibold">
                     First Name
@@ -499,9 +517,9 @@ export const SignUp = () => {
                     </div>
                   </div>
                 </>
-              )}
+              )} */}
   
-              <label htmlFor="email" className="block mt-4 font-semibold">
+              {/* <label htmlFor="email" className="block mt-4 font-semibold">
                 Email Address
               </label>
               <input
@@ -526,13 +544,13 @@ export const SignUp = () => {
                 className="border border-gray-300 rounded px-3 py-2 w-full"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-              />
+              /> */}
   
               <button
                 type="submit"
                 className="mt-4 bg-blue-800 text-white font-semibold py-2 px-4 ml-16 rounded-full"
               >
-                Submit
+                APPLY NOW
               </button>
             </>
           )}

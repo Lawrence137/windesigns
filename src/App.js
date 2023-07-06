@@ -7,6 +7,7 @@ import { Navbar } from './Navbar';
 import { Home } from './Home';
 import { Investment } from './Investment';
 import { SignUp } from './SignUp';
+import { Company } from './Company';
 
 const history = createBrowserHistory();
 
@@ -28,7 +29,8 @@ export const App = () => {
           <Route path="/signup" element={<SignUp setIsAuthenticated={setIsAuthenticated} />} />
           {isAuthenticated && (
             <>
-              <Route path="/investment" element={<Investment />} />
+              <Route path="/investment" element={<Investment setIsAuthenticated={setIsAuthenticated} />} />
+              <Route path="/company" element={<Company />} />
             </>
           )}
         </Routes>

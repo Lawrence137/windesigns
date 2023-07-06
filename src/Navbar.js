@@ -26,10 +26,10 @@ export const Navbar = ({ isAuthenticated, handleLogout }) => {
           </Link>
           {isAuthenticated ? (
             <>
-              <Link to="/search" exact className="nav-link">
+              <Link to="/company" exact className="nav-link">
                 Search
               </Link>
-              <Link to="/shelf" exact className="nav-link">
+              <Link to="/imvestment" exact className="nav-link">
                 Shelf
               </Link>
               <Link to="/" onClick={handleLogout} exact className="nav-link">
