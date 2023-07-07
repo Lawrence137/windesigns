@@ -10,7 +10,7 @@ export const SignUp = () => {
     passport: Yup.mixed().required("Passport is required"),
     kraPin: Yup.string().required("KRA PIN is required"),
     residence: Yup.mixed().required("Proof of residence is required"),
-    bankStatement: Yup.mixed().required("Bank/Mpesa statements are required"),
+    bankStatement: Yup.mixed().required("Bank/Mpesa statement is required"),
   });
 
   const handleSubmit = (values) => {
@@ -26,7 +26,7 @@ export const SignUp = () => {
           alert("Your application is being processed.");
           return res.json();
         } else {
-          throw new Error("Email already exists");
+          throw new Error("An Error Occurred");
         }
       })
       .catch((error) => {
