@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from "react";
 import { createBrowserHistory } from 'history';
 import './App.css';
-import { Login } from './Login';
+// import { Login } from './Login';
 import { Navbar } from './Navbar';
 import { Home } from './Home';
 import { Investment } from './Investment';
@@ -25,7 +25,7 @@ export const App = () => {
       <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout}  />
         <Routes history={history}>
           <Route path="/" element={<Home setIsAuthenticated={setIsAuthenticated} />} />
-          <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+          {/* <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} /> */}
           <Route path="/signup" element={<SignUp setIsAuthenticated={setIsAuthenticated} />} />
           {isAuthenticated && (
             <>

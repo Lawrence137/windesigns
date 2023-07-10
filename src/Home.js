@@ -35,7 +35,7 @@ export const Home = () => {
             <form className="mt-4 flex flex-col items-center">
               <button
                 type="submit"
-                className="flex py-4 px-10 text-xl rounded-full mt-4 text-black font-bold bg-gradient-to-r from-red-700 via-blue-700 to-yellow-700 w-full"
+                className="flex py-4 px-10 text-4x1 md:text-xl rounded-full mt-4 text-black font-bold bg-gradient-to-r from-red-700 via-blue-700 to-yellow-700 w-full"
                 onClick={handleSubmit}
               >
                 Get Started
