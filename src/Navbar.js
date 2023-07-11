@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import React, { useState, useRef, useEffect } from "react";
 import novavest from "./assets/novavest.png";
 import { FaBars, FaTimes } from "react-icons/fa";
+// import { Icon } from "react-icons-kit";
+// import { ic_menu } from "react-icons-kit/md/ic_menu";
+// import { ic_close } from "react-icons-kit/md/ic_close";
+
 
 export const Navbar = ({ isAuthenticated, handleLogout }) => {
   const [nav, setNav] = useState(false);
@@ -62,12 +66,17 @@ export const Navbar = ({ isAuthenticated, handleLogout }) => {
           </Link>
         </div>
       )}
-      <div onClick={() => setNav(!nav)} className='cursor-pointer pr-4 py-4 z-10 text-gray-500 md:hidden'>
+      <div onClick={() => setNav(!nav)} className='cursor-pointer pr-4 py-4 z-30 text-white md:hidden'>
         {nav ?  <FaTimes  size={30}/> : <FaBars size={30} />}
       </div>
 
       {nav && (
-        <div ref={navRef} className={`fixed top-0 right-0 w-3/4 h-screen bg-white text-black transition transform duration-300 ${nav ? '' : 'translate-x-full'}`}>
+        <>
+        <div     ref={navRef}
+        className={`fixed top-0 right-0 w-3/4 h-screen bg-gradient-to-b from-gray-600 to-gray-400 text-white transition duration-700 transform z-20 ${
+          nav ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
           <div className='h-full overflow-y-scroll'>
             <ul className='flex flex-col justify-center items-center py-6'>
               <li onClick={handleLinkClick} className='px-4 cursor-pointer capitalize py-6 text-2xl'>
@@ -76,10 +85,10 @@ export const Navbar = ({ isAuthenticated, handleLogout }) => {
               {isAuthenticated && (
                 <>
                   <li onClick={handleLinkClick} className='px-4 cursor-pointer capitalize py-6 text-4xl'>
-                    <Link to="/search">Search</Link>
+                    <Link to="/investment">Search</Link>
                   </li>
                   <li onClick={handleLinkClick} className='px-4 cursor-pointer capitalize py-6 text-4xl'>
-                    <Link to="/shelf">Shelf</Link>
+                    <Link to="/company">Shelf</Link>
                   </li>
                   <li onClick={() => { handleLogout(); handleLinkClick(); }} className='px-4 cursor-pointer capitalize py-6 text-4xl'>
                     Logout
@@ -99,6 +108,12 @@ export const Navbar = ({ isAuthenticated, handleLogout }) => {
             </ul>
           </div>
         </div>
+            <div
+            className={`fixed inset-0 bg-black transition-opacity duration-700 z-10 ${
+              nav ? "opacity-70" : "opacity-0 pointer-events-none"
+            }`}
+          />
+          </>
       )}
     </nav>
   );
