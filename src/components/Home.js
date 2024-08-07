@@ -15,7 +15,7 @@ export const Home = () => {
         <div
           className="bg-cover bg-center h-screen"
           style={{
-            backgroundImage: `url(${require("./assets/backgrd.jpg")})`
+            backgroundImage: `url(${require("../assets/backgrd.jpg")})`
           }}
         >
           <div
